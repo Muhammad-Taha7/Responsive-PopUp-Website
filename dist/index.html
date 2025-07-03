@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coding Lab</title>
+  <link rel="stylesheet" href="output.css" />
+  <link rel="stylesheet" href="./src/input.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="relative font-poppins">
+
+  <!-- Main Section -->
+  <div class="h-screen w-full bg-[url('/Images/bg.jpg')] bg-cover bg-center bg-no-repeat">
+    <!-- Navbar -->
+    <div class="nav h-[6rem] w-full flex justify-between lg:justify-around gap-12 items-center px-[1.7rem] md:px-[3rem] lg:px-0">
+      
+      <!-- Logo -->
+      <div class="logo text-[1.7rem] md:text-[2.5rem] font-semibold text-white">
+        CodingLab
+      </div>
+      
+      <!-- Desktop Links -->
+      <div class="links hidden text-white text-[1.2rem] lg:flex gap-10">
+        <a href="#" class="relative group overflow-hidden">
+          <span class="relative z-10">Home</span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+        </a>
+        <a href="#" class="relative group overflow-hidden">
+          <span class="relative z-10">Product</span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+        </a>
+        <a href="#" class="relative group overflow-hidden">
+          <span class="relative z-10">Services</span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+        </a>
+        <a href="#" class="relative group overflow-hidden">
+          <span class="relative z-10">Contact</span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+        </a>
+      </div>
+
+      <!-- Login Button -->
+      <div class="btn text-[1.3rem] hidden lg:block text-white border-white border py-3 px-8 rounded-md cursor-pointer" onclick="toggleLoginPopup()">
+        <button>Login</button>
+      </div>
+
+      <!-- Mobile Menu Icon -->
+      <div class="btn block lg:hidden cursor-pointer" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars text-white text-[1.5rem]"></i>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Slide Menu -->
+  <div id="mobileMenu" class="fixed top-0 left-[-100%] w-64 h-full bg-black text-white p-6 transition-all duration-500 z-50">
+    <div class="flex justify-between items-center mb-10">
+      <h2 class="text-2xl font-semibold">Menu</h2>
+      <i class="fa-solid fa-xmark text-2xl cursor-pointer" onclick="toggleMenu()"></i>
+    </div>
+    <nav class="flex flex-col gap-6 text-[1.2rem]">
+      <a href="#">Home</a>
+      <a href="#">Product</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+      <button onclick="toggleLoginPopup()" class="mt-8 border border-white px-4 py-2 rounded-md">Login</button>
+    </nav>
+  </div>
+
+  <!-- Login Popup -->
+  <div id="loginPopup" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+    <div class="bg-white w-[90%] max-w-md p-8 rounded-lg relative">
+      <button onclick="toggleLoginPopup()" class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">
+        &times;
+      </button>
+      <h2 class="text-2xl font-semibold mb-6 text-center">Login to Your Account</h2>
+      <form class="flex flex-col gap-4">
+        <input type="email" placeholder="Email" class="border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-blue-500">
+        <input type="password" placeholder="Password" class="border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-blue-500">
+        <button type="submit" class="bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.left = (menu.style.left === "0px") ? "-100%" : "0px";
+    }
+
+    function toggleLoginPopup() {
+      const popup = document.getElementById("loginPopup");
+      popup.classList.toggle("hidden");
+      popup.classList.toggle("flex");
+    }
+  </script>
+</body>
+</html>
