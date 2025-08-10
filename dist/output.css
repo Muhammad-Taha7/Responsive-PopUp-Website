@@ -743,8 +743,8 @@ video {
   --tw-bg-opacity: 0.5;
 }
 
-.bg-\[url\(\'\/Images\/bg\.jpg\'\)\] {
-  background-image: url('/Images/bg.jpg');
+.bg-\[url\(\'https\:\/\/i\.postimg\.cc\/BnBKnLrk\/bg\.jpg\'\)\] {
+  background-image: url('https://i.postimg.cc/BnBKnLrk/bg.jpg');
 }
 
 .bg-cover {
